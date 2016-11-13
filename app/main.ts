@@ -1,4 +1,4 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { FuckOffModule } from './modules/fuckoff/fuckoff.module';
+import { HeroesModule } from './modules/fuckoff/heroes.module';
 const platform = platformBrowserDynamic();
-platform.bootstrapModule(FuckOffModule);
+platform.bootstrapModule(HeroesModule);

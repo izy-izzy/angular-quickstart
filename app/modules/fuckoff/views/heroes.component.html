@@ -1,0 +1,39 @@
+<div class="module-fuckoff">
+    <div class="container"> 
+        <h1> {{ title }}</h1>
+        <section *ngIf="selectedHero === null">
+            <div class="row">
+                <div class="col-xs-12" *ngFor="let hero of heroes">
+                    <button class="btn btn-primary" (click)="selectHero(hero)"> 
+                        {{ hero.name }}
+                        <span class="badge">{{hero.id}}</span>
+                    </button>
+                    <br>
+                    <br>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section *ngIf="selectedHero !== null">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-addon">Name</span>
+                        <input type="text" class="form-control" [(ngModel)]="selectedHero.name" placeholder="name">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">Id</span>
+                        <input type="number" class="form-control" [(ngModel)]="selectedHero.id" placeholder="id">
+                    </div>
+                </div>
+                <hr>
+                <div class="col-md-6">
+                    <button class="btn btn-primary pull-right" (click)="saveHero()"> Save hero </button>
+                    <button class="btn btn-default pull-left" (click)="cancelHeroEditation()"> Cancel </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
