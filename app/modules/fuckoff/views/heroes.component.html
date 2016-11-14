@@ -16,24 +16,7 @@
         </section>
 
         <section *ngIf="selectedHero !== null">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="input-group">
-                        <span class="input-group-addon">Name</span>
-                        <input type="text" class="form-control" [(ngModel)]="selectedHero.name" placeholder="name">
-                    </div>
-                    <br>
-                    <div class="input-group">
-                        <span class="input-group-addon">Id</span>
-                        <input type="number" class="form-control" [(ngModel)]="selectedHero.id" placeholder="id">
-                    </div>
-                </div>
-                <hr>
-                <div class="col-md-6">
-                    <button class="btn btn-primary pull-right" (click)="saveHero()"> Save hero </button>
-                    <button class="btn btn-default pull-left" (click)="cancelHeroEditation()"> Cancel </button>
-                </div>
-            </div>
+           <hero-detail [hero]="selectedHero" (saveEditedHero)="saveHero()" (cancelHeroEdit)="cancelHeroEditation()"></hero-detail>
         </section>
     </div>
 </div>

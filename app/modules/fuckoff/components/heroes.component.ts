@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { Hero } from './../classes/hero.class';
+import { HeroDetailComponent } from './hero-detail.component';
 import * as _ from "lodash";
 
 @Component({
-  selector: 'fuck-off',
+  selector: 'heroes',
   templateUrl: 'build/modules/fuckoff/views/heroes.component.html',
 })
 
@@ -42,11 +44,5 @@ export class HeroesComponent {
   public cancelHeroEditation(){
     this.selectedHero = null;
   }
-}
-
-export class Hero {
-  id: number;
-  uid: number;
-  name: string;
 }
 

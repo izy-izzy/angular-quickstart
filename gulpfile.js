@@ -10,7 +10,7 @@ var pngquant = require('imagemin-pngquant');
 var runSequence = require('run-sequence');
 
 gulp.task('default', function(){
-  return runSequence('imagemin', 'scss');
+  return runSequence('imagemin', 'scss', 'copy-html');
 });
 
 gulp.task('scss', function () {
