@@ -10,7 +10,7 @@ var pngquant = require('imagemin-pngquant');
 var runSequence = require('run-sequence');
 
 gulp.task('default', function(){
-  return runSequence('imagemin', 'scss', 'copy-html');
+  return runSequence('imagemin', 'scss', 'copy-html', 'copy-fonts');
 });
 
 gulp.task('scss', function () {
@@ -36,6 +36,11 @@ gulp.task('watch', ['default'], function () {
 gulp.task('copy-html', function() {  
   gulp.src('app/**/*.html')
     .pipe(gulp.dest('build'));
+});
+
+gulp.task('copy-fonts', function() {  
+  gulp.src('node_modules/font-awesome/fonts/*')
+    .pipe(gulp.dest('build/fonts'));
 });
 
 gulp.task('imagemin', function(){

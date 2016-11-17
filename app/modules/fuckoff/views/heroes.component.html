@@ -4,13 +4,18 @@
         <section *ngIf="selectedHero === null">
             <div class="row">
                 <div class="col-xs-12" *ngFor="let hero of heroes">
-                    <button class="btn btn-primary" (click)="selectHero(hero)"> 
+                    <button class="btn" [ngClass]="{'btn-primary' : (hero.id > 10), 'btn-default' : (hero.id <= 10)}" (click)="selectHero(hero)"> 
+                        <span class="badge">n.{{hero.id}}</span>    
+                        <span [ngSwitch]="hero.vehicle">
+                            <i *ngSwitchCase="'boat'" class="fa fa-rocket"></i>
+                            <i *ngSwitchDefault class="fa fa-{{hero.vehicle}}"></i>
+                        </span>
                         {{ hero.name }}
-                        <span class="badge">{{hero.id}}</span>
+                        
+                        <span *ngIf="hero.reward" class="badge">reward: {{hero.reward.value | currency: hero.reward.currency :true:'.1-2'}}</span>
                     </button>
                     <br>
-                    <br>
-                    
+                    <br> 
                 </div>
             </div>
         </section>

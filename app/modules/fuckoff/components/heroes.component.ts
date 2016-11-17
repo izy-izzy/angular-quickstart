@@ -17,13 +17,31 @@ export class HeroesComponent {
     this.title = "Heroes";
     this.heroes = [{
       name: "sucker",
-      id: 12,
-      uid: 1
+      id: 56,
+      uid: 1,
+      vehicle: 'boat',
+      reward: {
+        value: 400,
+        currency : 'USD'
+      }
     },{
       name: "lolec",
-      id: 78,
-      uid: 2
+      id: 878,
+      uid: 2,
+      vehicle: 'car',
+      reward: {
+        value: 35,
+        currency: 'GBP'
+      }
+    },{
+      name: "Frederick",
+      id: 4,
+      uid: 3
     }]
+
+    this.heroes.sort((heroA, heroB) => { 
+      return heroA.id - heroB.id
+    });
   }
 
   public selectHero(hero:Hero){

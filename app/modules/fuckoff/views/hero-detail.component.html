@@ -1,3 +1,4 @@
+ <small> hash: {{ hero | heroHash}}</small>
  <div class="row">
     <div class="col-md-6">
         <div class="input-group">
@@ -9,10 +10,22 @@
             <span class="input-group-addon">Id</span>
             <input type="number" class="form-control" [(ngModel)]="hero.id" placeholder="id">
         </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">Reward - value</span>
+            <input type="number" class="form-control" [(ngModel)]="hero.reward.value" placeholder="value">
+        </div>
+        <br>
+        <div class="form-group">
+            <select [(ngModel)]="hero.reward.currency" class="form-control" id="currency-select">
+                <option [value]="'GBP'">Pounds / UK</option>
+                <option [value]="'USD'">Dollars / USA</option>
+            </select>
+        </div>
     </div>
     <hr>
     <div class="col-md-6">
-        <button class="btn btn-primary pull-right" (click)="saveHero()"> Save hero </button>
+        <button [sureSave]="saveHero" class="btn btn-primary pull-right" type="button"> Save hero </button>
         <button class="btn btn-default pull-left" (click)="cancelHeroEditation()"> Cancel </button>
     </div>
 </div>
