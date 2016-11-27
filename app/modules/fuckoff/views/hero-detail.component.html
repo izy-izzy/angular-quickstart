@@ -1,3 +1,4 @@
+ <h2> {{hero.name}} </h2>
  <small> hash: {{ hero | heroHash}}</small>
  <div class="row">
     <div class="col-md-6">
@@ -26,6 +27,6 @@
     <hr>
     <div class="col-md-6">
         <button [sureSave]="saveHero" class="btn btn-primary pull-right" type="button"> Save hero </button>
-        <button class="btn btn-default pull-left" (click)="cancelHeroEditation()"> Cancel </button>
+        <button class="btn btn-default pull-left" [routerLink]="['/heroeslist']"> Cancel </button>
     </div>
 </div>
