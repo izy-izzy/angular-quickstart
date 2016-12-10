@@ -1,7 +1,7 @@
 
 export class Hero {
   id: number;
-  uid: number;
+  uid: string;
   name: string;
   vehicle?: string;
   reward?: {

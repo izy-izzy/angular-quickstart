@@ -1,32 +1,34 @@
- <h2> {{hero.name}} </h2>
- <small> hash: {{ hero | heroHash}}</small>
- <div class="row">
-    <div class="col-md-6">
-        <div class="input-group">
-            <span class="input-group-addon">Name</span>
-            <input type="text" class="form-control" [(ngModel)]="hero.name" placeholder="name">
+ <div *ngIf="isLoaded">
+    <h2> {{hero.name}} </h2>
+    <small> hash: {{ hero | heroHash}}</small>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">Name</span>
+                <input type="text" class="form-control" [(ngModel)]="hero.name" placeholder="name">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">Id</span>
+                <input type="number" class="form-control" [(ngModel)]="hero.id" placeholder="id">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">Reward - value</span>
+                <input type="number" class="form-control" [(ngModel)]="hero.reward.value" placeholder="value">
+            </div>
+            <br>
+            <div class="form-group">
+                <select [(ngModel)]="hero.reward.currency" class="form-control" id="currency-select">
+                    <option [value]="'GBP'">Pounds / UK</option>
+                    <option [value]="'USD'">Dollars / USA</option>
+                </select>
+            </div>
         </div>
-        <br>
-        <div class="input-group">
-            <span class="input-group-addon">Id</span>
-            <input type="number" class="form-control" [(ngModel)]="hero.id" placeholder="id">
+        <hr>
+        <div class="col-md-6">
+            <button [sureSave]="null" (runOnConfirmed)="saveHero()" [confirmMessage]="'WHAT?'" class="btn btn-primary pull-right" type="button"> Save hero </button>
+            <button class="btn btn-default pull-left" [routerLink]="['/heroeslist']"> Cancel </button>
         </div>
-        <br>
-        <div class="input-group">
-            <span class="input-group-addon">Reward - value</span>
-            <input type="number" class="form-control" [(ngModel)]="hero.reward.value" placeholder="value">
-        </div>
-        <br>
-        <div class="form-group">
-            <select [(ngModel)]="hero.reward.currency" class="form-control" id="currency-select">
-                <option [value]="'GBP'">Pounds / UK</option>
-                <option [value]="'USD'">Dollars / USA</option>
-            </select>
-        </div>
-    </div>
-    <hr>
-    <div class="col-md-6">
-        <button [sureSave]="null" (runOnConfirmed)="saveHero()" [confirmMessage]="'WHAT?'" class="btn btn-primary pull-right" type="button"> Save hero </button>
-        <button class="btn btn-default pull-left" [routerLink]="['/heroeslist']"> Cancel </button>
     </div>
 </div>

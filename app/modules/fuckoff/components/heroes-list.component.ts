@@ -23,10 +23,15 @@ export class HeroesListComponent {
   }
 
   ngOnInit(): void {
+      // this.route.params
+      //     .switchMap((params: Params) => this.heroService.getHeroes())
+      //     .subscribe((heroes) => {
+      //         console.log(heroes);
+      //           this.heroes = heroes;
+      //     });
       this.route.params
-          .switchMap((params: Params) => this.heroService.getHeroes())
+          .switchMap((params: Params) => this.heroService.getHeroes2())
           .subscribe((heroes) => {
-              console.log(heroes);
                 this.heroes = heroes;
           });
   }
