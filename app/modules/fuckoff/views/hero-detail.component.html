@@ -26,7 +26,7 @@
     </div>
     <hr>
     <div class="col-md-6">
-        <button [sureSave]="saveHero" class="btn btn-primary pull-right" type="button"> Save hero </button>
+        <button [sureSave]="null" (runOnConfirmed)="saveHero()" [confirmMessage]="'WHAT?'" class="btn btn-primary pull-right" type="button"> Save hero </button>
         <button class="btn btn-default pull-left" [routerLink]="['/heroeslist']"> Cancel </button>
     </div>
 </div>

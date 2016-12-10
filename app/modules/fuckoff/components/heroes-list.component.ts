@@ -1,32 +1,35 @@
 import { Component } from '@angular/core';
 import { Hero } from './../classes/hero.class';
 import { HeroDetailComponent } from './hero-detail.component';
+import { ActivatedRoute, Params, Router }   from '@angular/router';
 import * as _ from "lodash";
+import { Location }                 from '@angular/common';
 import { HeroProviderService } from '../services/heroes-provider.service';
 
 @Component({
   selector: 'heroesList',
-  templateUrl: 'build/modules/fuckoff/views/heroes-list.component.html',
-  providers: [HeroProviderService]
+  templateUrl: 'build/modules/fuckoff/views/heroes-list.component.html'
 })
 
 export class HeroesListComponent { 
   public title:string;
   public heroes: Hero[];
 
-  constructor(private heroService:HeroProviderService){
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private location: Location,
+              private heroService: HeroProviderService){
       this.title = "List of heroes";
-
-      console.log('FAIL');
   }
 
   ngOnInit(): void {
-    this.heroService.getHeroes()
-      .then((data) => {
-        this.heroes = data;
-      },(error) => {
-        console.log('ERROR');
-      });
+      this.route.params
+          .switchMap((params: Params) => this.heroService.getHeroes())
+          .subscribe((heroes) => {
+              console.log(heroes);
+                this.heroes = heroes;
+          });
   }
+
 }
 

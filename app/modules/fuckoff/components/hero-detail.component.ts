@@ -26,14 +26,13 @@ export class HeroDetailComponent implements OnInit{
       constructor( private route: ActivatedRoute,
                    private router: Router,
                    private location: Location,
-                   private heroService: HeroProviderService){}
+                   public heroService: HeroProviderService){}
 
       ngOnInit(): void {
             this.route.params
             .switchMap((params: Params) => this.heroService.getHero( + params['uid']))
             .subscribe((hero) => { 
                   this.hero = hero;
-                  console.log('HERO:'+ hero);
             });
       }
 

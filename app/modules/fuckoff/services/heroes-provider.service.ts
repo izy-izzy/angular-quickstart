@@ -5,7 +5,7 @@ import { Hero } from '../classes/hero.class';
 
 @Injectable()
 export class HeroProviderService {
-
+    private id:number;
     private heroes:Hero[] = [{
       name: "sucker",
       id: 56,
@@ -27,10 +27,16 @@ export class HeroProviderService {
     },{
       name: "Frederick",
       id: 4,
-      uid: 3
+      uid: 3,
+      vehicle: 'jet',
+      reward: {
+          value: 0,
+          currency: 'GBP'
+      }
     }];
 
     constructor(){
+        this.id = Math.floor(Math.random()*1000000);
         this.heroes.sort((heroA, heroB) => { 
             return heroA.id - heroB.id
         });
@@ -50,13 +56,20 @@ export class HeroProviderService {
     }
 
     public saveHero(hero:Hero): Promise<boolean> {
-        return this.getHero(hero.id)
+        return this.getHero(hero.uid)
             .then((selectedHero) => {
                 selectedHero = hero;
+                this.printOutHeroes();
                 return true;
             }, (error) =>{
                 return false;
             });
+    }
+
+    private printOutHeroes(){
+        console.log(this.heroes);
+        var h = this.getHeroes();
+        console.log(h);
     }
 
 }
