@@ -1,4 +1,7 @@
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 @import '../../node_modules/font-awesome/scss/font-awesome';
 
-@import './modules/heroes';
+@import './basics/basics';
+@import './layout/layout';
+@import './modules/heroes/heroes';
+@import './modules/google-api/google-api';

@@ -8,7 +8,7 @@ import { HeroProviderService } from '../services/heroes-provider.service';
 
 @Component({
   selector: 'heroesList',
-  templateUrl: 'build/modules/fuckoff/views/heroes-list.component.html'
+  templateUrl: 'build/modules/heroes/views/heroes-list.component.html'
 })
 
 export class HeroesListComponent { 
@@ -23,12 +23,6 @@ export class HeroesListComponent {
   }
 
   ngOnInit(): void {
-      // this.route.params
-      //     .switchMap((params: Params) => this.heroService.getHeroes())
-      //     .subscribe((heroes) => {
-      //         console.log(heroes);
-      //           this.heroes = heroes;
-      //     });
       this.route.params
           .switchMap((params: Params) => this.heroService.getHeroes2())
           .subscribe((heroes) => {

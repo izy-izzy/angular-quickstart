@@ -7,7 +7,7 @@ import 'rxjs/add/operator/switchMap';
 
 @Component({
     selector: 'hero-detail',
-    templateUrl: 'build/modules/fuckoff/views/hero-detail.component.html'
+    templateUrl: 'build/modules/heroes/views/hero-detail.component.html'
 })
 
 export class HeroDetailComponent implements OnInit{
@@ -22,9 +22,8 @@ export class HeroDetailComponent implements OnInit{
 
       ngOnInit(): void {
             this.isLoaded = false;
-            
             this.route.params
-                  .switchMap((params: Params) => this.heroService.getHero( + params['uid']))
+                  .switchMap((params: Params) => this.heroService.getHero(params['uid']))
                   .subscribe((hero) => { 
                         this.hero = hero;
                         this.isLoaded = true;

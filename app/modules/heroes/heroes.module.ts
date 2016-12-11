@@ -1,7 +1,6 @@
 import { NgModule }             from '@angular/core';
 import { BrowserModule }        from '@angular/platform-browser';
 import { FormsModule }          from '@angular/forms';
-import { RouterModule }         from '@angular/router';
 import { HeroesComponent }      from './components/heroes.component';
 import { HeroDetailComponent }  from './components/hero-detail.component';
 import { HeroesListComponent }  from './components/heroes-list.component';
@@ -10,6 +9,8 @@ import { SureSaveDirective }    from './directives/sure-save.directive';
 import { HeroProviderService }  from './services/heroes-provider.service';
 import { HeroesRouteingModule } from './routes/heroes.routes';
 import { AngularFireModule }    from 'angularfire2';
+
+import { GoogleApiModule } from './../google-api/google-api.module';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyALyhNv5gFmwBN9wl7ezfLcvQUr-AorfzM",
@@ -20,7 +21,7 @@ export const firebaseConfig = {
 };
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HeroesRouteingModule, AngularFireModule.initializeApp(firebaseConfig) ],
+  imports:      [ BrowserModule, FormsModule, HeroesRouteingModule, AngularFireModule.initializeApp(firebaseConfig), GoogleApiModule ],
   declarations: [ HeroesComponent, HeroDetailComponent, HeroesListComponent, HeroHashPipe, SureSaveDirective ],
   bootstrap:    [ HeroesComponent ],
   providers:    [ HeroProviderService ],

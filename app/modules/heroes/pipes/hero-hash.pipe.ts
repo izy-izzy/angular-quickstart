@@ -7,7 +7,7 @@ import { Hero } from './../classes/hero.class';
 
 export class HeroHashPipe implements PipeTransform {
     transform( hero: Hero ):any {
-        return "#" + hero.uid*2 + hero.id*4 + hero.vehicle; 
+        return "#" + hero.uid + hero.id*4 + hero.vehicle; 
     }
       
 
