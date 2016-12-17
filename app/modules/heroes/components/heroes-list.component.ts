@@ -24,7 +24,7 @@ export class HeroesListComponent {
 
   ngOnInit(): void {
       this.route.params
-          .switchMap((params: Params) => this.heroService.getHeroes2())
+          .switchMap((params: Params) => this.heroService.getHeroes())
           .subscribe((heroes) => {
                 this.heroes = heroes;
           });

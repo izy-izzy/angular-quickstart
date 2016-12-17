@@ -1,5 +1,4 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { HeroesModule } from './modules/heroes/heroes.module';
-import { GoogleApiModule } from './modules/google-api/google-api.module';
+import { MainModule } from './modules/main/main.module';
 const platform = platformBrowserDynamic();
-platform.bootstrapModule(HeroesModule);
+platform.bootstrapModule(MainModule);

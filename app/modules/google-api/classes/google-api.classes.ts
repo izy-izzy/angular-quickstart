@@ -11,3 +11,11 @@ export class GoogleAPIRoute {
     time: number; // milliseconds
     route: GoogleAPICoordinates[];
 }
+
+export class GoogleAPIAddressLookup {
+  request: string;
+  result: {
+    address: string;
+    coortindates: GoogleAPICoordinates;
+  }
+}

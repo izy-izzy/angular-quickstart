@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../classes/hero.class';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { DatabaseServiceProvider } from './../../database/services/database.service';
 
 @Injectable()
 export class HeroProviderService {
 
-    private heroes: FirebaseListObservable<any[]>;
+    constructor(private angularFire: AngularFire, private database:DatabaseServiceProvider){}
 
-    constructor(private angularFire: AngularFire){
-        this.heroes = angularFire.database.list('/heroes');
-    }
-
-    public getHeroes2():FirebaseListObservable<any>{
-        return this.heroes;
+    public getHeroes():FirebaseListObservable<any>{
+        return this.database.getHeroes();
     }
 
     public getHero(uid: string): FirebaseObjectObservable<any> {
-            return this.angularFire.database.object('/heroes/'+uid);
+        return this.angularFire.database.object('/heroes/'+uid);
     }
 
     private cleanHero(hero:Hero):Hero{
