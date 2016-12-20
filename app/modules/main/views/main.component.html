@@ -1,5 +1,5 @@
 <div class="container">
-    <navigation-component></navigation-component>
+    <navigation-component *ngIf="userLoggedIn"></navigation-component>
 
     <router-outlet></router-outlet>
 </div>

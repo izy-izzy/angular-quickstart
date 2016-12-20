@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
-import { DatabaseServiceProvider } from './../../database/services/database.service';
+import { AuthServiceProvider } from './../../database/services/auth.service';
 import { User } from './../classes/users.classes';
 
 @Injectable()
 export class UsersProviderService {
 
-    constructor(private database:DatabaseServiceProvider){}
+    constructor(private authService:AuthServiceProvider){}
 
     public authUser(user:User){
-        this.database.authUser(user.email, user.password)
-            .then((response) => {
-                console.log(response);
-            }, (error) => {
-                console.log(error);
-            })
-            .catch(() => {
-
+        this.authService.logIn(user.email, user.password)
+            .then((authUser) => {
+                user.password = '';
             });
     }
 

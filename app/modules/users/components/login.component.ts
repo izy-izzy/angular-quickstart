@@ -17,9 +17,7 @@ export class LoginComponent implements OnInit{
         this.user = this.usersProviderService.getCleanUser();
     }
 
-    ngOnInit(): void {
-
-    }
+    ngOnInit(): void {}
 
     public loginUser(){
         this.usersProviderService.authUser(this.user);

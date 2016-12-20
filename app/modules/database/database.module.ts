@@ -1,6 +1,7 @@
 import { NgModule }             from '@angular/core';
 import { BrowserModule }        from '@angular/platform-browser';
 import { DatabaseServiceProvider }  from './services/database.service';
+import { AuthServiceProvider }  from './services/auth.service';
 import { AngularFireModule }    from 'angularfire2';
 
 import { GoogleApiModule } from './../google-api/google-api.module';
@@ -17,7 +18,7 @@ export const firebaseConfig = {
   imports:      [ BrowserModule, AngularFireModule.initializeApp(firebaseConfig), GoogleApiModule ],
   declarations: [ ],
   bootstrap:    [ ],
-  providers:    [ DatabaseServiceProvider ],
+  providers:    [ DatabaseServiceProvider, AuthServiceProvider ],
 })
 
 export class DatabaseModule { }

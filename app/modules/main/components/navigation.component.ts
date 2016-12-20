@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthServiceProvider } from './../../database/services/auth.service';
 
 @Component({
   selector: 'navigation-component',
@@ -7,7 +8,10 @@ import { Component } from '@angular/core';
 
 export class NavigationComponent { 
 
-  constructor(){
+  constructor(private authServiceProvider:AuthServiceProvider){}
+
+  public logoutUser(){
+    this.authServiceProvider.logOut();
   }
 }
 
