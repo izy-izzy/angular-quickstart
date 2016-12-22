@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AngularFire, AuthProviders, AuthMethods, FirebaseAuthState} from 'angularfire2';
+import {initializeApp, auth,database} from 'firebase';
 import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 
 @Injectable()
 export class AuthServiceProvider{
-
+    
     constructor(private angularFire: AngularFire, private router: Router){
         this.angularFire.auth.subscribe((user) => {
             if(user) {
@@ -47,5 +48,30 @@ export class AuthServiceProvider{
 
     public logOut(): void{
         return this.angularFire.auth.logout();
+    }
+
+    public userPasswordReset(email:string): Promise<any>{
+        return auth().sendPasswordResetEmail(email);
+    }
+
+    public updateEmail(email:string, password:string, newEmail:string): Promise<any>{
+       return auth().signInWithEmailAndPassword(email, password)
+            .then(function(user) {
+                return user.updateEmail(newEmail);
+            });
+    }
+
+    public changePassword(email:string, password:string, newPassword:string): Promise<any>{
+       return auth().signInWithEmailAndPassword(email, password)
+            .then(function(user) {
+                return user.updatePassword(newPassword);
+            });
+    }
+
+    public createUser(email:string, password:string):Promise<any>{
+        return this.angularFire.auth.createUser({
+                email: email,
+                password: password
+            });
     }
 }

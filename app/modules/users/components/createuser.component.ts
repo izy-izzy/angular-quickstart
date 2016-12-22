@@ -3,11 +3,11 @@ import { UsersProviderService } from '../services/users.service';
 import { User } from './../classes/users.classes';
 
 @Component({
-    selector: 'login-form',
-    templateUrl: 'build/modules/users/views/login.component.html'
+    selector: 'createuser-form',
+    templateUrl: 'build/modules/users/views/createuser.component.html'
 })
 
-export class LoginComponent implements OnInit{
+export class CreateUserComponent implements OnInit{
 
     user: User;      
 
@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit{
 
     ngOnInit(): void {}
 
-    public loginUser(){
-        this.usersProviderService.authUser(this.user);
+    public createUser(){
+        this.usersProviderService.createUser(this.user);
     }
 
 }

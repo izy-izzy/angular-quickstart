@@ -21,7 +21,12 @@ export class MainComponent {
     });
 
     router.events.subscribe((event) => {
-      if(event instanceof NavigationStart && event.url !== "/loginscreen") {
+      if(
+          event instanceof NavigationStart 
+          && event.url !== "/loginscreen" 
+          && event.url !== "/forgottenpassword"
+          && event.url !== "/changeemail"
+          && event.url !== "/createuser") {
           if ( !this.authService.userLoggedIn() ){
             this.router.navigate(['/loginscreen']);
           }

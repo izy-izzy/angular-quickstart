@@ -3,13 +3,13 @@ import { UsersProviderService } from '../services/users.service';
 import { User } from './../classes/users.classes';
 
 @Component({
-    selector: 'login-form',
-    templateUrl: 'build/modules/users/views/login.component.html'
+    selector: 'changeemail-form',
+    templateUrl: 'build/modules/users/views/changeemail.component.html'
 })
 
-export class LoginComponent implements OnInit{
+export class ChangeEmailComponent implements OnInit{
 
-    user: User;      
+    user: User;     
 
     constructor(private usersProviderService: UsersProviderService){
         this.user = this.usersProviderService.getCleanUser();
@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit{
 
     ngOnInit(): void {}
 
-    public loginUser(){
-        this.usersProviderService.authUser(this.user);
+    public changeEmail(){
+        this.usersProviderService.updateEmail(this.user);
     }
 
 }

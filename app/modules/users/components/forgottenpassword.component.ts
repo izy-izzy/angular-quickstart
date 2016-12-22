@@ -3,11 +3,11 @@ import { UsersProviderService } from '../services/users.service';
 import { User } from './../classes/users.classes';
 
 @Component({
-    selector: 'login-form',
-    templateUrl: 'build/modules/users/views/login.component.html'
+    selector: 'forgottenpassword-form',
+    templateUrl: 'build/modules/users/views/forgottenpassword.component.html'
 })
 
-export class LoginComponent implements OnInit{
+export class ForgottenPasswordComponent implements OnInit{
 
     user: User;      
 
@@ -17,8 +17,8 @@ export class LoginComponent implements OnInit{
 
     ngOnInit(): void {}
 
-    public loginUser(){
-        this.usersProviderService.authUser(this.user);
+    public userPasswordReset(){
+        this.usersProviderService.userPasswordReset(this.user);
     }
 
 }
