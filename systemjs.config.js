@@ -6,12 +6,12 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': 'http://localhost:3000/node_modules/'
+      'npm:': 'http://localhost:8080/node_modules/'
     },
     // map tells the System loader where to look for things
     map: {
       // our app is within the app folder
-      app: 'http://localhost:3000/build',
+      app: 'http://localhost:8080/build',
       // angular bundles
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
       '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
