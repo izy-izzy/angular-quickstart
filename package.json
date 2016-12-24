@@ -2,7 +2,7 @@
   "name": "angular-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"gulp watch\" \"lite-server\" ",
+    "start": "",
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
