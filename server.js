@@ -2,11 +2,12 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 var baseDirectory = "./" ;
-var PORT = 80;
+var PORT = process.env.PORT || 8080;
 
 var correctFileTypes = ['html','htm','js','jpg','jpeg','png','css','map','svg','gif', 'eot', 'ttf', 'woff', 'woff2', 'json'];
 var correctFileTypesHeaders = ["text/html","text/html", "text/javascript","image/jpg","image/jpeg", "image/png", "text/css", "application/octet-stream", 'application/octet-stream', "image/gif", 'application/octet-stream', 'application/octet-stream', 'application/octet-stream', 'application/octet-stream','application/octet-stream'];
 
+console.log("SP: ", process.env.PORT);
 console.log("SERVER runs on port:",PORT);
 
     var loadpage = function(response){
