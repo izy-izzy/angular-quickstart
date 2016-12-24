@@ -2,7 +2,7 @@
   "name": "game-meat",
   "version": "1.0.0",
   "scripts": {
-    "start": "rm -rf node_modules/ && rm -rf build/ && npm install && npm install --only=dev && rm ./node_modules/angularfire2/node_modules/firebase/firebase.d.ts && tsc && gulp && node express.js",
+    "start": "rm -rf node_modules/ && rm -rf build/ && npm install express && node express.js && npm install && npm install --only=dev && rm ./node_modules/angularfire2/node_modules/firebase/firebase.d.ts && tsc && gulp",
     "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
