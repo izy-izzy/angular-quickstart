@@ -4,9 +4,9 @@ import { AddressLookupChecker } from './components/address-lookup.component';
 import { DistanceProviderService }  from './services/distance-provider.service';
 import { AddressLoopupProviderService }  from './services/address-lookup.service';
 
-const CLASSES: any = { GoogleAPIAddressLookup, GoogleAPICoordinates, GoogleAPIRoute };
-const COMPONENTS: any = { DistanceChecker, AddressLookupChecker }
-const SERVICES: any = { DistanceProviderService, AddressLoopupProviderService };
+const CLASSES: any = [ GoogleAPIAddressLookup, GoogleAPICoordinates, GoogleAPIRoute ];
+const COMPONENTS: any = [ DistanceChecker, AddressLookupChecker ];
+const SERVICES: any = [ DistanceProviderService, AddressLoopupProviderService ];
 
 export {
     CLASSES,

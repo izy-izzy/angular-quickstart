@@ -8,10 +8,10 @@ import { CreateUserComponent }     from './components/createuser.component';
 
 import { UsersProviderService }  from './services/users.service';
 
-const CLASSES:any =       { User }
-const COMPONENTS: any =   { LoginComponent, ForgottenPasswordComponent, ChangeEmailComponent, 
-                            ChangePasswordComponent, CreateUserComponent }
-const SERVICES: any =     { UsersProviderService }
+const CLASSES:any[] =       [ User ]
+const COMPONENTS: any[] =   [ LoginComponent, ForgottenPasswordComponent, ChangeEmailComponent, 
+ChangePasswordComponent, CreateUserComponent ]
+const SERVICES: any[] =     [ UsersProviderService ]
 
 export {
     CLASSES,

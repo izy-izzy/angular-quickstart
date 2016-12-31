@@ -8,11 +8,11 @@ import { SureSaveDirective }    from './directives/sure-save.directive';
 
 import { HeroProviderService }  from './services/heroes-provider.service';
 
-const CLASSES: any = { Hero };
-const COMPONENTS: any = { HeroDetailComponent, HeroesListComponent };
-const PIPES: any = { HeroHashPipe };
-const DIRECTIVES: any = { SureSaveDirective };
-const SERVICES: any = { HeroProviderService };
+const CLASSES: any = [ Hero ];
+const COMPONENTS: any = [ HeroDetailComponent, HeroesListComponent ];
+const PIPES: any = [ HeroHashPipe ];
+const DIRECTIVES: any = [ SureSaveDirective ];
+const SERVICES: any = [ HeroProviderService ];
 
 export {
     CLASSES,

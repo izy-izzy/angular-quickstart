@@ -9,12 +9,12 @@ import { DatabaseModule }       from './../database/database.module';
 
 import { MainRoutingModule }    from './routes/main-routes.module';
 
-import { COMPONENTS }        from './shared'; 
+import { COMPONENTS, MainComponent }        from './shared'; 
 
 @NgModule({
   imports:      [ BrowserModule, NgbModule.forRoot(), MainRoutingModule, UsersModule, HeroesModule, GoogleApiModule, DatabaseModule ],
   declarations: [ ...COMPONENTS ],
-  bootstrap:    [ COMPONENTS.MainComponent ],
+  bootstrap:    [ MainComponent ],
   providers:    [ ],
 })
 
