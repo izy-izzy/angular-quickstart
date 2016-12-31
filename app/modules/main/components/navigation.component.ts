@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthServiceProvider } from './../../database/services/auth.service';
+import { AuthServiceProvider } from './../../database/shared';
 
 @Component({
   selector: 'navigation-component',

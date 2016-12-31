@@ -1,10 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { BrowserModule }        from '@angular/platform-browser';
-import { DatabaseServiceProvider }  from './services/database.service';
-import { AuthServiceProvider }  from './services/auth.service';
 import { AngularFireModule }    from 'angularfire2';
 
-import { GoogleApiModule } from './../google-api/google-api.module';
+import { SERVICES }             from './shared';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyALyhNv5gFmwBN9wl7ezfLcvQUr-AorfzM",
@@ -15,10 +13,10 @@ export const firebaseConfig = {
 };
 
 @NgModule({
-  imports:      [ BrowserModule, AngularFireModule.initializeApp(firebaseConfig), GoogleApiModule ],
+  imports:      [ BrowserModule, AngularFireModule.initializeApp(firebaseConfig) ],
   declarations: [ ],
   bootstrap:    [ ],
-  providers:    [ DatabaseServiceProvider, AuthServiceProvider ],
+  providers:    [ ...SERVICES ],
 })
 
 export class DatabaseModule { }

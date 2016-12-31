@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AuthServiceProvider } from './../../database/services/auth.service';
+import { AuthServiceProvider } from './../../database/shared';
 import { User } from './../classes/users.classes';
 
 @Injectable()

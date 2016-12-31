@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Hero } from '../classes/hero.class';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
-import { DatabaseServiceProvider } from './../../database/services/database.service';
+import { DatabaseServiceProvider } from './../../database/shared';
 
 @Injectable()
 export class HeroProviderService {

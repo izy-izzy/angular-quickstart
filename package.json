@@ -7,7 +7,7 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "gulp:w": "gulp watch",
-    "local": "npm install && del \"node_modules\\angularfire2\\node_modules\\firebase\\firebase.d.ts\" && concurrently \"tsc -w\" \"gulp watch\" \"node express.js\" "
+    "local": "npm install && del \"node_modules\\angularfire2\\node_modules\\firebase\\firebase.d.ts\" && concurrently \"tsc -w\" \"gulp watch\" \"lite-server\" "
   },
   "licenses": [
     {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationStart} from '@angular/router';
-import { AuthServiceProvider } from './../../database/services/auth.service';
+import { AuthServiceProvider } from './../../database/shared';
 
 @Component({
   selector: 'main-component',
