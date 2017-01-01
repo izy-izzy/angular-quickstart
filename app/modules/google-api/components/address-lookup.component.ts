@@ -1,6 +1,6 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { GoogleAPIRoute, GoogleAPIAddressLookup } from './../classes/google-api.classes';
-import { AddressLoopupProviderService } from './../services/address-lookup.service'; 
+import { AddressLoopupProviderService } from './../services/address-lookup.service';
 
 @Component({
     selector: 'distance-checker',
@@ -16,7 +16,6 @@ export class AddressLookupChecker implements OnInit{
 
     ngOnInit(): void {
         this.addressLookupResults = [];
-        //this.route = this.addressLookupProviderService.getRandomRoute();
     }
 
     public lookupAddress():void{

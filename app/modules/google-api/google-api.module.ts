@@ -9,7 +9,7 @@ import { SERVICES, COMPONENTS } from './shared';
 @NgModule({
   imports:      [ BrowserModule, FormsModule, GoogleAPIRouting ],
   declarations: [ ...COMPONENTS ],
-  providers:    [ ...SERVICES ],
+  providers:    [ ...SERVICES,  ],
 })
 
 export class GoogleApiModule { }

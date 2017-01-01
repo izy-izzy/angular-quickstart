@@ -1,0 +1,19 @@
+LAZY LOAD OF MODULES: 
+https://angular.io/docs/ts/latest/guide/router.html#!#sts=ActivatedRoute:%20the%20one-stop-shop%20for%20route%20information
+
+CUSTOM DIALOGS:
+https://github.com/shlomiassaf/angular2-modal ???
+
+CanReuse, OnReuse, OnActivate, OnDeactivate:
+Do they still Exist?
+
+Server:
+set to support routing to subparts of the project.
+
+CLEAN UP THE CODE. GET RID OF THE STUFF THAT IS NO LONGER REQUIRED;
+
++ MAKE STYLING, this is ridiculous ... 
+
+MAKE THE FORMS HOW THEY SHOULD BE ... with validation.
+
+

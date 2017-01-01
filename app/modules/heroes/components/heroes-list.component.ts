@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Hero } from './../classes/hero.class';
 import { HeroDetailComponent } from './hero-detail.component';
 import { ActivatedRoute, Params, Router }   from '@angular/router';
-import * as _ from "lodash";
 import { Location }                 from '@angular/common';
 import { HeroProviderService } from '../services/heroes-provider.service';
 

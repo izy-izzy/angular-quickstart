@@ -15,21 +15,9 @@ export class MainComponent {
     this.authService.isAuthenticated().subscribe((user) => {
       if (user) {
         this.userLoggedIn = true;
+        this.router.navigate(['/dashboard']);
       } else {
         this.userLoggedIn = false;
-      }
-    });
-
-    router.events.subscribe((event) => {
-      if(
-          event instanceof NavigationStart 
-          && event.url !== "/loginscreen" 
-          && event.url !== "/forgottenpassword"
-          && event.url !== "/changeemail"
-          && event.url !== "/createuser") {
-          if ( !this.authService.userLoggedIn() ){
-            this.router.navigate(['/loginscreen']);
-          }
       }
     });
   }

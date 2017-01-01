@@ -47,7 +47,9 @@ export class AuthServiceProvider{
     }
 
     public logOut(): void{
-        return this.angularFire.auth.logout();
+        this.angularFire.auth.logout();
+        console.log(this.angularFire.auth.getAuth());
+        
     }
 
     public userPasswordReset(email:string): Promise<any>{

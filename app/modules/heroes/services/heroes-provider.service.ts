@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Hero } from '../classes/hero.class';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import { DatabaseServiceProvider } from './../../database/shared';
+import * as _ from "lodash";
 
 @Injectable()
 export class HeroProviderService {
@@ -14,6 +15,15 @@ export class HeroProviderService {
 
     public getHero(uid: string): FirebaseObjectObservable<any> {
         return this.angularFire.database.object('/heroes/'+uid);
+    }
+
+    public copyHero(hero:Hero): Hero{
+        var outHero : Hero = _.cloneDeep(hero);
+        return outHero;
+    }
+
+    public areHeroesEqual(hero1:Hero, hero2:Hero): boolean{
+        return _.isEqual(hero1, hero2);
     }
 
     private cleanHero(hero:Hero):Hero{

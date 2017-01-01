@@ -13,6 +13,7 @@ import 'rxjs/add/operator/switchMap';
 export class HeroDetailComponent implements OnInit{
 
       hero : Hero;
+      originalHero : Hero;
       isLoaded : boolean;
 
       constructor( private route: ActivatedRoute,
@@ -25,6 +26,7 @@ export class HeroDetailComponent implements OnInit{
             this.route.params
                   .switchMap((params: Params) => this.heroService.getHero(params['uid']))
                   .subscribe((hero) => { 
+                        this.originalHero = this.heroService.copyHero(hero);
                         this.hero = hero;
                         this.isLoaded = true;
                   });
@@ -37,6 +39,14 @@ export class HeroDetailComponent implements OnInit{
                   }, (error) => {
                         window.confirm('There has been an error during saving the hero detail.');
                   });
+      }
+
+      canDeactivate(): Promise<boolean> | boolean {
+            if (!this.heroService.areHeroesEqual(this.originalHero, this.hero)){
+                  return confirm('Discard changes?');
+            } else {
+                  return true;
+            }
       }
 
 }
